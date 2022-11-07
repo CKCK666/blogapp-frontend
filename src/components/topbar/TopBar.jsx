@@ -2,15 +2,15 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
 import "./topbar.css";
-import { LinkContainer } from "react-router-bootstrap";
-import {NavDropdown } from "react-bootstrap";
 
+import {NavDropdown } from "react-bootstrap";
+import { PF } from "../../constants";
 
 
 export default function TopBar() {
   const { user, dispatch } = useContext(Context);
-  const PF = "https://blogapp-api.onrender.com/images/"
-  console.log(user)
+  
+  
 
   const handleLogout = () => {
   dispatch({ type: "LOGOUT" })

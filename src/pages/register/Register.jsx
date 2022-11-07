@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./register.css";
-
+import { host } from "../../constants";
 export default function Register() {
   const [userName, setUsername] = useState("");
   
@@ -29,7 +29,7 @@ export default function Register() {
      }
       else {
       
-      const {data} = await axios.post("auth/signup", {
+      const {data} = await axios.post(`${host}auth/signup`, {
         userName,
        
         email,

@@ -4,8 +4,8 @@ import { useContext, useState,useEffect } from "react";
 import { Context } from "../../context/Context";
 import axios from "axios";
 import Swal from 'sweetalert2'
-
-
+import { PF } from "../../constants";
+import { host } from "../../constants";
 export default function Settings() {
   const [file, setFile] = useState(null);
   const [username, setUsername] = useState("");
@@ -14,7 +14,7 @@ export default function Settings() {
   const [success, setSuccess] = useState(false);
    const [about,setAbout]=useState("")
   const { user, dispatch } = useContext(Context);
-  const PF = "https://blogapp-api.onrender.com/images/"
+  
  
 
 
@@ -42,7 +42,7 @@ export default function Settings() {
     }).then(async(result) => {
       if (result.isConfirmed) {
         try {
-          await axios.delete(`/users/${user._id}`)
+          await axios.delete(`${host}/users/${user._id}`)
           Swal.fire(
             'Deleted!',
             'Your file has been deleted.',
@@ -80,11 +80,11 @@ export default function Settings() {
       data.append("file", file);
       updatedUser.profilePic = filename;
       try {
-        await axios.post("/upload", data);
+        await axios.post(`${host}/upload`, data);
       } catch (err) {}
     }
     try {
-      const res = await axios.put("/users/" + user._id, updatedUser);
+      const res = await axios.put(`${host}/users/` + user._id, updatedUser);
       setSuccess(true);
       dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
       window.location.reload()

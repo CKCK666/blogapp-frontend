@@ -1,15 +1,17 @@
 import axios from "axios";
 import { useEffect, useState,useContext } from "react";
-import { Link } from "react-router-dom";
+
 import "./sidebar.css";
+import { PF } from "../../constants";
 import { Context } from "../../context/Context"
+import { host } from "../../constants";
 export default function Sidebar({about}) {
   const [cats, setCats] = useState([]);
-  const { user, dispatch } = useContext(Context)
-  const PF = "https://blogapp-api.onrender.com/images/"
+  const { user,  } = useContext(Context)
+  
   useEffect(() => {
     const getCats = async () => {
-      const res = await axios.get("/categories");
+      const res = await axios.get(`${host}/categories`);
       setCats(res.data);
     };
     getCats();

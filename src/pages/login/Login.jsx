@@ -3,12 +3,12 @@ import { useContext, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
 import "./login.css";
-
+import { host } from "../../constants";
 export default function Login() {
   const userRef = useRef();
   const passwordRef = useRef();
   const [error,setError]=useState("")
-  const { dispatch, isFetching } = useContext(Context);
+  const { dispatch } = useContext(Context);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,7 +16,7 @@ export default function Login() {
     dispatch({ type: "LOGIN_START" });
     try {
       
-      const{data} = await axios.post("/auth/signin", {
+      const{data} = await axios.post(`${host}/auth/signin`, {
         username: userRef.current.value,
         password: passwordRef.current.value,
       });

@@ -1,7 +1,7 @@
 {
   "name": "react-blog",
   "version": "0.1.0",
-  "proxy": "https://blogapp-api.onrender.com/api",
+  
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.12.4",
@@ -45,5 +45,6 @@
       "last 1 safari version"
     ]
   }
+ 
   
 }
