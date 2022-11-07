@@ -44,5 +44,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://mern6blog6app.herokuapp.com/api"
+  "proxy": "https://blogapp-api.onrender.com/api"
 }
