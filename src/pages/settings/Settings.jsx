@@ -14,7 +14,7 @@ export default function Settings() {
   const [success, setSuccess] = useState(false);
    const [about,setAbout]=useState("")
   const { user, dispatch } = useContext(Context);
-  const PF = "https://mern6blog6app.herokuapp.com/images/"
+  const PF = "https://blogapp-api.onrender.com/images/"
  
 
 

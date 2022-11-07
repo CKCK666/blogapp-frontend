@@ -2,7 +2,7 @@ import "./post.css";
 import { Link } from "react-router-dom";
 
 export default function Post({ post }) {
-  const PF = "https://mern6blog6app.herokuapp.com/images/";
+  const PF = "https://blogapp-api.onrender.com/images/";
   return (
     <div className="post">
        <Link to={`/post/${post._id}`} className="link">

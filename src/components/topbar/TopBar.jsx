@@ -9,7 +9,7 @@ import {NavDropdown } from "react-bootstrap";
 
 export default function TopBar() {
   const { user, dispatch } = useContext(Context);
-  const PF = "https://mern6blog6app.herokuapp.com/images/"
+  const PF = "https://blogapp-api.onrender.com/images/"
   console.log(user)
 
   const handleLogout = () => {

@@ -6,7 +6,7 @@ import { Context } from "../../context/Context"
 export default function Sidebar({about}) {
   const [cats, setCats] = useState([]);
   const { user, dispatch } = useContext(Context)
-  const PF = "https://mern6blog6app.herokuapp.com/images/"
+  const PF = "https://blogapp-api.onrender.com/images/"
   useEffect(() => {
     const getCats = async () => {
       const res = await axios.get("/categories");
