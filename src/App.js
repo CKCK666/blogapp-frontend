@@ -16,7 +16,7 @@ function App() {
    
       <TopBar />
       <Switch>
-        <Route exact path="/">
+        <Route exact path="https://blogapp-frontend.onrender.com">
           <Home />
         </Route>
         <Route path="/register">{user ? <Home /> : <Register />}</Route>
